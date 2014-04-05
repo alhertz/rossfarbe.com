@@ -5,8 +5,10 @@ $(window).load(function() {
     $('.content').fadeIn(2500, function() {
       // Animation complete
     });
+    $('.content--wrapper .content').addClass('animated fadeInUp');
   });
 });
+
 
 // Clip video
 $(function(){

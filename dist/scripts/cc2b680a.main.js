@@ -1,1 +1,0 @@
-console.log("'Allo 'Allo!"),$(window).load(function(){$(".video--wrapper").fadeIn(1e3,function(){$(".content").fadeIn(2500,function(){})})}),$(function(){$(".video--wrapper").css({height:$(window).height(),width:$(window).width(),overflow:"hidden"}),$(window).resize(function(){$(".video--wrapper").css({height:$(window).height(),width:$(window).width(),overflow:"hidden"})})});
