@@ -1,4 +1,3 @@
-console.log('\'Allo \'Allo!');
 
 $(window).load(function() {
   $('.video--wrapper').fadeIn(1000, function() {
