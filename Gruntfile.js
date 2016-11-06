@@ -6,6 +6,7 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+var pkg = require('./package.json');
 
 module.exports = function (grunt) {
 
@@ -138,7 +139,6 @@ module.exports = function (grunt) {
         },
 
 
-
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
@@ -234,6 +234,8 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
+
         svgmin: {
             dist: {
                 files: [{
@@ -244,6 +246,8 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
+
         htmlmin: {
             dist: {
                 options: {
@@ -263,6 +267,27 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>'
                 }]
             }
+        },
+
+        buildcontrol: {
+          options: {
+            dir: 'dist',
+            commit: true,
+            push: true,
+            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+          },
+          pages: {
+            options: {
+              remote: 'git@github.com:alhertz/rossfarbe.com.git',
+              branch: 'gh-pages'
+            }
+          },
+          local: {
+            options: {
+              remote: '../',
+              branch: 'build'
+            }
+          }
         },
 
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
